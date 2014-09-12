@@ -1,0 +1,16 @@
+<% @groups = Group.all %>
+<ul class="leftSubMenu">
+    <% if !@groups.nil? %>
+        <% @groups.each do |group| %>
+            <li class="icon-iphone"><b><%= link_to "#{group.group_name}",  group %></li></td></b></li>
+        <% end %>
+    <% end %>
+</ul>
+<ul class="leftSubMenu-bottomMenu">
+  <li>
+    <div class="rightIcons">
+      <a href="javascript:void(0)" class="icon-minus"></a>
+      <a href="/groups/new" class="icon-plus"></a>
+    </div>
+  </li>
+</ul>

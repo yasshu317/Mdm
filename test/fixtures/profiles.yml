@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  profile_name: MyString
+  camera: false
+  set_password: false
+  wallpaper_id: 1
+  call_recording: false
+  spy_recording: false
+  email_access_id: 1
+  default_call_duration: 1
+  device_mode: 1
+  ringtone_id: 1
+  access_to_os: false
+  wifi: false
+  gprs: false
+  timezone: MyString
+  secure_pictures: false
+  internal_setting_id: 1
+  status: false
+
+two:
+  profile_name: MyString
+  camera: false
+  set_password: false
+  wallpaper_id: 1
+  call_recording: false
+  spy_recording: false
+  email_access_id: 1
+  default_call_duration: 1
+  device_mode: 1
+  ringtone_id: 1
+  access_to_os: false
+  wifi: false
+  gprs: false
+  timezone: MyString
+  secure_pictures: false
+  internal_setting_id: 1
+  status: false

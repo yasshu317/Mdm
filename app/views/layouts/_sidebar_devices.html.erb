@@ -1,0 +1,16 @@
+<% @devices = Device.all %>
+<ul class="leftSubMenu">
+  <% if !@devices.nil? %>
+      <% @devices.each do |device| %>
+          <li class="icon-iphone"><b><%= link_to "#{device.device_type}",  device %></li></td></b></li>
+      <% end %>
+  <% end %>
+</ul>
+<ul class="leftSubMenu-bottomMenu">
+  <li>
+    <div class="rightIcons">
+      <a href="javascript:void(0)" class="icon-minus"></a>
+      <a href="/devices/new" class="icon-plus"></a>
+    </div>
+  </li>
+</ul>

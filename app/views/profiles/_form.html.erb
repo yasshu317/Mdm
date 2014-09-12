@@ -1,0 +1,137 @@
+<script>
+    $('.profiles').addClass('selected');
+</script>
+<%= form_for @profile, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :profile_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :profile_name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :camera, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.radio_button :camera, "1"%>&nbsp;<lable>Yes</lable>&nbsp;&nbsp;
+      <%= f.radio_button :camera, "0"%>&nbsp;<lable>No</lable>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :set_password, :class => 'control-label' %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <%= f.radio_button :set_password, "1"%>&nbsp;<lable>Yes</lable>&nbsp;&nbsp;
+    <%= f.radio_button :set_password, "0"%>&nbsp;<lable>No</lable>
+    <div id="send_to_one">
+      <div class="controls">
+          </br>
+          <%= f.radio_button :password_type, "General"%>&nbsp;&nbsp;<lable>General</lable></br>
+          <%= f.radio_button :password_type, "Alphanumeric"%>&nbsp;&nbsp;<lable>Alphanumeric</lable><br>
+          <%= f.radio_button :password_type, "Alpha Numeric with Special Chars "%>&nbsp;&nbsp;<lable>Alpha Numeric with Special Chars </lable>
+      </div>
+      <div class="controls" style="margin-left: 10em">
+        </br>
+        <%= f.label :password_length , :class => 'control-label' %>&nbsp;&nbsp;
+        <%= f.text_field :password_length, :class => 'text_field' %></br></br>
+        <%= f.label :expiry , :class => 'control-label' %>&nbsp;&nbsp;
+        <%= f.text_field :expiry, :class => 'text_field','data-behaviour' => 'datepicker' %>
+      </div>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :wallpaper_id, :class => 'control-label' %>
+    <div class="controls">
+      <%=select("profile",'wallpaper_id', Wallpaper.all.collect {|p| [ p.name, p.id ] }, {include_blank: 'None'})  %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :call_recording, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.radio_button :call_recording, "1"%>&nbsp;<lable>Yes</lable>&nbsp;&nbsp;
+      <%= f.radio_button :call_recording, "0"%>&nbsp;<lable>No</lable>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :spy_recording, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.radio_button :spy_recording, "1"%>&nbsp;<lable>Yes</lable>&nbsp;&nbsp;
+      <%= f.radio_button :spy_recording, "0"%>&nbsp;<lable>No</lable>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :email_access_id, :class => 'control-label' %>
+  <div class="controls">
+    <%= select_tag 'email_access_ids', options_from_collection_for_select(EmailAccess.all, "id", "mail_server"), { :multiple => true} %>
+  </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :default_call_duration, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :default_call_duration, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :device_mode, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.radio_button :device_mode, '0' %> Silent
+      <%= f.radio_button :device_mode, '1' %> Vibrate
+      <%= f.radio_button :device_mode, '2' %> Ringing
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :ringtone_id, :class => 'control-label' %>
+    <div class="controls">
+          <%=select("profile",'ringtone_id', Ringtone.all.collect {|p| [ p.name, p.id ] }, {include_blank: 'None'})  %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :access_to_OS_Upgrade, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.radio_button :access_to_os, "1"%>&nbsp;<lable>Yes</lable>&nbsp;&nbsp;
+      <%= f.radio_button :access_to_os, "0"%>&nbsp;<lable>No</lable>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :wifi, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.radio_button :wifi, "1"%>&nbsp;<lable>Yes</lable>&nbsp;&nbsp;
+      <%= f.radio_button :wifi, "0"%>&nbsp;<lable>No</lable>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :gprs, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.radio_button :gprs, "1"%>&nbsp;<lable>Yes</lable>&nbsp;&nbsp;
+      <%= f.radio_button :gprs, "0"%>&nbsp;<lable>No</lable>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :timezone, :class => 'control-label' %>
+    <div class="controls">
+          <%= time_zone_select( "profile", :timezone, nil, include_blank: 'None') %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :secure_pictures, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.radio_button :secure_pictures, "1"%>&nbsp;<lable>Yes</lable>&nbsp;&nbsp;
+      <%= f.radio_button :secure_pictures, "0"%>&nbsp;<lable>No</lable>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :internal_setting_id, :class => 'control-label' %>
+    <div class="controls">
+    <%= select_tag 'internal_setting_ids', options_from_collection_for_select(InternalSetting.all, "id", "name"), { :multiple => true} %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :status, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.radio_button :status, "1"%>&nbsp;<lable>Active</lable>&nbsp;&nbsp;
+      <%= f.radio_button :status, "0"%>&nbsp;<lable>Inactive</lable>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                profiles_path, :class => 'btn' %>
+  </div>
+<% end %>

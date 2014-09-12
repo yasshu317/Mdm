@@ -1,0 +1,16 @@
+<% @device_groups = DeviceGroup.all %>
+<ul class="leftSubMenu">
+  <% if !@device_groups.nil? %>
+      <% @device_groups.each do |device_group| %>
+          <li class="icon-iphone"><b><%= link_to "#{device_group.name}",  device_group %></li></td></b></li>
+      <% end %>
+  <% end %>
+</ul>
+<ul class="leftSubMenu-bottomMenu">
+  <li>
+    <div class="rightIcons">
+      <a href="javascript:void(0)" class="icon-minus"></a>
+      <a href="/device_groups/new" class="icon-plus"></a>
+    </div>
+  </li>
+</ul>

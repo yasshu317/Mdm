@@ -1,0 +1,25 @@
+<%- model_class = Wallpaper -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @wallpaper.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:delete_wallpaper) %>:</strong></dt>
+  <dd><%= @wallpaper.delete_wallpaper %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:avatar) %>:</strong></dt>
+  <%= image_tag @wallpaper.avatar.url(:thumb) %>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              wallpapers_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_wallpaper_path(@wallpaper), :class => 'btn button-secondary' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              wallpaper_path(@wallpaper),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

@@ -1,0 +1,219 @@
+<%- model_class = Device -%>
+<script>
+    $('.devices').addClass('selected');
+</script>
+<!-- start of .userinfo-navsections -->
+<div class="userinfo-navsections" id="headerDiv">
+  <!-- start of .userinfo -->
+  <ul class="userinfo"><li><%= @device.device_type %></li></ul>
+  <!-- end of userinfo -->
+
+
+  <ul class="menuItems">
+    <li><a href="javascript:void(0)" class="about activeMenu"><span class="icon"></span>About</a></li>
+    <li><a href="javascript:void(0)" class="settings"><span class="icon"></span>Settings</a></li>
+    <li><a href="javascript:void(0)" class="apps"><span class="icon"></span>Apps</a></li>
+    <li><a href="javascript:void(0)" class="activity"><span class="icon"></span>Activity</a></li>
+  </ul>
+
+</div>
+<!-- end of .userinfo-navsections -->
+
+
+<div class="contentdiv-inner">
+  <!-- start of .collapseButtonsDiv -->
+  <div class="collapseButtonsDiv">
+    <a href="javascript:void(0)" class="expandAll" id="expandAll">Expand All</a><a href="javascript:void(0)" class="collapseAll" id="collapseAll">Collapse All</a>
+  </div>
+  <!-- end of .collapseButtonsDiv -->
+
+  <!-- start of .accordion-tabs-section -->
+  <div class="accordion-tabs-section">
+
+    <div id="accordion" class="panel-group">
+
+      <!-- start of .panel.panel-primary.accordianPanel -->
+      <div class="panel panel-primary accordianPanel">
+        <div class="panel-heading aboutGeneral expand" data-toggle="collapse" data-parent="#accordion" data-target="#accordionOne">General<span class="drowDownIcon"></span></div>
+        <div id="accordionOne" class="panel-collapse collapse in">
+          <!-- start of .panel-body its new added code not from bootstrap  -->
+          <div class="panel-body">
+            <div class="fleft">
+              <ul class="panel-ul">
+                <li><span class="pannel-data">Type</span><span class="pannel-data-info"><%= @device.device_type %></span></li>
+                <li><span class="pannel-data">Capacity:</span><span class="pannel-data-info"><%= @device.capacity %></span></li>
+                <li><span class="pannel-data">Software Version:</span><span class="pannel-data-info"><%= @device.version %></span></li>
+              </ul>
+            </div>
+            <div class="fright">
+              <ul class="panel-ul">
+                <li><span class="pannel-data">Serial Number:</span><span class="pannel-data-info"><%= @device.serial_number %></span></li>
+                <li><span class="pannel-data">User:</span><span class="pannel-data-info"><%= @device.mobile_user_id %></span></li>
+                <li><span class="pannel-data">Supervised:</span><span class="pannel-data-info"><%= @device.supervised %></span></li>
+              </ul>
+            </div>
+          </div>
+          <!-- end of .panel-body its new added code not from bootstrap  -->
+        </div>
+      </div>
+      <!-- end of .panel.panel-primary.accordianPanel -->
+
+      <div class="panel panel-primary accordianPanel" >
+        <div class="panel-heading aboutDetails" data-toggle="collapse" data-parent="#accordion" data-target="#accordionTwo">Details<span class="drowDownIcon"></span></div>
+        <div id="accordionTwo" class="panel-collapse collapse">
+          <!-- start of .panel-body its new added code not from bootstrap  -->
+          <div class="panel-body">
+            <div class="fleft">
+              <ul class="panel-ul">
+                <li><span class="pannel-data">Type</span><span class="pannel-data-info"><%= @device.device_type %></span></li>
+                <li><span class="pannel-data">Capacity:</span><span class="pannel-data-info"><%= @device.capacity %></span></li>
+                <li><span class="pannel-data">Software Version:</span><span class="pannel-data-info"><%= @device.version %></span></li>
+              </ul>
+            </div>
+            <div class="fright">
+              <ul class="panel-ul">
+                <li><span class="pannel-data">Serial Number:</span><span class="pannel-data-info"><%= @device.serial_number %></span></li>
+                <li><span class="pannel-data">User:</span><span class="pannel-data-info"><%= @device.mobile_user_id %></span></li>
+                <li><span class="pannel-data">Supervised:</span><span class="pannel-data-info"><%= @device.supervised %></span></li>
+              </ul>
+            </div>
+          </div>
+          <!-- end of .panel-body its new added code not from bootstrap  -->
+        </div>
+      </div>
+
+      <div class="panel panel-primary accordianPanel">
+        <div class="panel-heading aboutSecurity" data-toggle="collapse" data-parent="#accordion" data-target="#accordionThree">Security<span class="drowDownIcon"></span></div>
+        <div id="accordionThree" class="panel-collapse collapse">
+          <!-- start of .panel-body its new added code not from bootstrap  -->
+          <div class="panel-body">
+            <div class="fleft">
+              <ul class="panel-ul">
+                <li><span class="pannel-data">Type</span><span class="pannel-data-info"><%= @device.device_type %></span></li>
+                <li><span class="pannel-data">Capacity:</span><span class="pannel-data-info"><%= @device.capacity %></span></li>
+                <li><span class="pannel-data">Software Version:</span><span class="pannel-data-info"><%= @device.version %></span></li>
+              </ul>
+            </div>
+            <div class="fright">
+              <ul class="panel-ul">
+                <li><span class="pannel-data">Serial Number:</span><span class="pannel-data-info"><%= @device.serial_number %></span></li>
+                <li><span class="pannel-data">User:</span><span class="pannel-data-info"><%= @device.mobile_user_id %></span></li>
+                <li><span class="pannel-data">Supervised:</span><span class="pannel-data-info"><%= @device.supervised %></span></li>
+              </ul>
+            </div>
+          </div>
+          <!-- end of .panel-body its new added code not from bootstrap  -->
+        </div>
+      </div>
+
+      <div class="panel panel-primary accordianPanel">
+        <div class="panel-heading aboutRestrictions" data-toggle="collapse" data-parent="#accordion" data-target="#accordionFour">Restrictions<span class="drowDownIcon"></span></div>
+        <div id="accordionFour" class="panel-collapse collapse">
+          <!-- start of .panel-body its new added code not from bootstrap  -->
+          <div class="panel-body">
+            <div class="fleft">
+              <ul class="panel-ul">
+                <li><span class="pannel-data">Type</span><span class="pannel-data-info"><%= @device.device_type %></span></li>
+                <li><span class="pannel-data">Capacity:</span><span class="pannel-data-info"><%= @device.capacity %></span></li>
+                <li><span class="pannel-data">Software Version:</span><span class="pannel-data-info"><%= @device.version %></span></li>
+              </ul>
+            </div>
+            <div class="fright">
+              <ul class="panel-ul">
+                <li><span class="pannel-data">Serial Number:</span><span class="pannel-data-info"><%= @device.serial_number %></span></li>
+                <li><span class="pannel-data">User:</span><span class="pannel-data-info"><%= @device.mobile_user_id %></span></li>
+                <li><span class="pannel-data">Supervised:</span><span class="pannel-data-info"><%= @device.supervised %></span></li>
+              </ul>
+            </div>
+          </div>
+          <!-- end of .panel-body its new added code not from bootstrap  -->
+        </div>
+      </div>
+
+      <div class="panel panel-primary accordianPanel">
+        <div class="panel-heading aboutInstalledApps" data-toggle="collapse" data-parent="#accordion" data-target="#accordionFive">Installed Apps<span class="drowDownIcon"></span></div>
+        <div id="accordionFive" class="panel-collapse collapse">
+          <!-- start of .panel-body its new added code not from bootstrap  -->
+          <div class="panel-body">
+            <div class="fleft">
+              <ul class="panel-ul">
+                <li><span class="pannel-data">Type</span><span class="pannel-data-info"><%= @device.device_type %></span></li>
+                <li><span class="pannel-data">Capacity:</span><span class="pannel-data-info"><%= @device.capacity %></span></li>
+                <li><span class="pannel-data">Software Version:</span><span class="pannel-data-info"><%= @device.version %></span></li>
+              </ul>
+            </div>
+            <div class="fright">
+              <ul class="panel-ul">
+                <li><span class="pannel-data">Serial Number:</span><span class="pannel-data-info"><%= @device.serial_number %></span></li>
+                <li><span class="pannel-data">User:</span><span class="pannel-data-info"><%= @device.mobile_user_id %></span></li>
+                <li><span class="pannel-data">Supervised:</span><span class="pannel-data-info"><%= @device.supervised %></span></li>
+              </ul>
+            </div>
+          </div>
+          <!-- end of .panel-body its new added code not from bootstrap  -->
+        </div>
+      </div>
+
+      <div class="panel panel-primary accordianPanel">
+        <div class="panel-heading aboutInDeviceGroups" data-toggle="collapse" data-parent="#accordion" data-target="#accordionSix">In Device Groups<span class="drowDownIcon"></span></div>
+        <div id="accordionSix" class="panel-collapse collapse">
+          <!-- start of .panel-body its new added code not from bootstrap  -->
+          <div class="panel-body">
+            <div class="fleft">
+              <ul class="panel-ul">
+                <li><span class="pannel-data">Type</span><span class="pannel-data-info"><%= @device.device_type %></span></li>
+                <li><span class="pannel-data">Capacity:</span><span class="pannel-data-info"><%= @device.capacity %></span></li>
+                <li><span class="pannel-data">Software Version:</span><span class="pannel-data-info"><%= @device.version %></span></li>
+              </ul>
+            </div>
+            <div class="fright">
+              <ul class="panel-ul">
+                <li><span class="pannel-data">Serial Number:</span><span class="pannel-data-info"><%= @device.serial_number %></span></li>
+                <li><span class="pannel-data">User:</span><span class="pannel-data-info"><%= @device.mobile_user_id %></span></li>
+                <li><span class="pannel-data">Supervised:</span><span class="pannel-data-info"><%= @device.supervised %></span></li>
+              </ul>
+            </div>
+          </div>
+          <!-- end of .panel-body its new added code not from bootstrap  -->
+        </div>
+      </div>
+
+      <div class="panel panel-primary accordianPanel">
+        <div class="panel-heading aboutCertificates" data-toggle="collapse" data-parent="#accordion" data-target="#accordionSeven">Certificates<span class="drowDownIcon"></span></div>
+        <div id="accordionSeven" class="panel-collapse collapse">
+          <!-- start of .panel-body its new added code not from bootstrap  -->
+          <div class="panel-body">
+            <div class="fleft">
+              <ul class="panel-ul">
+                <li><span class="pannel-data">Type</span><span class="pannel-data-info"><%= @device.device_type %></span></li>
+                <li><span class="pannel-data">Capacity:</span><span class="pannel-data-info"><%= @device.capacity %></span></li>
+                <li><span class="pannel-data">Software Version:</span><span class="pannel-data-info"><%= @device.version %></span></li>
+              </ul>
+            </div>
+            <div class="fright">
+              <ul class="panel-ul">
+                <li><span class="pannel-data">Serial Number:</span><span class="pannel-data-info"><%= @device.serial_number %></span></li>
+                <li><span class="pannel-data">User:</span><span class="pannel-data-info"><%= @device.mobile_user_id %></span></li>
+                <li><span class="pannel-data">Supervised:</span><span class="pannel-data-info"><%= @device.supervised %></span></li>
+              </ul>
+            </div>
+          </div>
+          <!-- end of .panel-body its new added code not from bootstrap  -->
+        </div>
+      </div>
+    </div>
+    <!-- end of .panel-group -->
+  </div>
+  <!-- end of div .accordion-tabs-section -->
+</div>
+
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+            devices_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+            edit_device_path(@device), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+            device_path(@device),
+            :method => 'delete',
+            :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+            :class => 'btn btn-danger' %>

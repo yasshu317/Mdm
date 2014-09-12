@@ -1,0 +1,276 @@
+/**
+@import url("old-style.css");
+**/
+
+/** start of external fonts **/
+@font-face {
+    font-family: OpenSansRegular;
+    src: url(OpenSans-Regular.ttf);
+    src: url('OpenSans-Regular.eot');
+    src: url('OpenSans-Regular.eot?#iefix') format('embedded-opentype'),
+    url('OpenSans-Regular.woff') format('woff'),
+    url('OpenSans-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: OpenSansBold;
+    src: url(OpenSans-Bold.ttf);
+    src: url('OpenSans-Bold.eot');
+    src: url('OpenSans-Bold.eot?#iefix') format('embedded-opentype'),
+    url('OpenSans-Bold.woff') format('woff'),
+    url('OpenSans-Bold.ttf') format('truetype');
+}
+/** end of start of external fonts **/
+
+/** start of changing default **/
+*{ font-family: OpenSansRegular, Arial, Helvetica, sans-serif; }
+*,ul,ol,span,label{ padding:0; margin:0; }
+a,img{ border:0px none; outline:0 none; }
+a:link{ outline:0px none;}
+/** end of changing default **/
+
+/** start of common code **/
+.fleft{ float:left; }
+.fright{ float:right; }
+.clearBoth{ clear:both; }
+.pm0{ padding:0; margin:0; }
+.p0{ padding:0; }
+.m0{ margin:0; }
+/** end of common code **/
+
+
+header{ height:70px;z-index:1; border-bottom: 5px solid #00add0; box-shadow: 0 8px 9px -9px #000; position:fixed; left:0; top:0; width:100%; background:#ffffff; }
+header .logo{ margin:7px 0 0 23px; float:left; width:174px; height:51px; background:url('logo.png') no-repeat; }
+.top-right-section{ float:right; margin-right:45px; height:100%; }
+.nav-section{ height:100%; }
+.nav-section{ list-style:none; }
+.nav-section li{ float:left; height:100%; margin-left:10px; }
+.nav-section .search{ background:#eee;width:47px; margin-right:10px; }
+
+.search-anchor{ margin:23px auto; background:url('searchicon.png') no-repeat center; width:25px; height:19px; display:block; }
+
+
+.nav-section .user{}
+.user-icon{ width:42px; height:42px; margin:11px auto 0 auto; }
+.nav-section .userText{}
+.userText span{ margin-top:15px; display:block; margin-top:20px; }
+.nav-section .arrowDown{ }
+.arrowDown-anchor{ margin-top:20px; background:#eee url('downarrow.png') no-repeat center; border-radius:3px; width:25px; height:19px; display:block; padding-top:3px; }
+
+
+/** start of .main-wrapper **/
+.main-wrapper{ width:100%; clear:both; margin-top:70px; }
+/** end of .main-wrapper **/
+
+
+/** start of .cell-section table layout **/
+.table-section{ display:table; width:100%: }
+.table-row{ display:table-row; }
+.table-cell{ display: table-cell; vertical-align:top; height: 788px; }
+
+
+/** start of .userinfo-navsections **/
+.userinfo-navsections{ overflow:hidden; clear:both; background-color: #fdfdfd; }
+.userinfo-navsections ul{ list-style:none; }
+.userinfo{ float:left; margin-left: 17px; margin-top: 8px; }
+.userinfo li{ background: url('iphoneactivelarge.png') no-repeat;  padding-left:50px; line-height:50px; font-size:26px; }
+
+.menuItems{  float:right; /** position:absolute; right:0; **/}
+.menuItems li{ float:left; border-left:1px solid #e8ecef; }
+.menuItems li a{ float:left; font-size:14px; color:#768691; text-decoration:none; text-align:center; padding-bottom:5px;
+
+
+}
+.menuItems li a:hover{
+    -webkit-transition: background 0.5s linear;
+    -moz-transition: background 0.5s linear;
+    -ms-transition: background 0.5s linear;
+    -o-transition: background 0.5s linear;
+    transition: background 0.5s linear;
+}
+
+.menuItems li a span.icon{ margin:0px 40px 0px 40px; background-repeat:no-repeat; background-position:center; width:40px; height:40px; display:block; }
+.menuItems li a:hover,.menuItems li a.activeMenu{ background-color:#00add0; color:#ffffff; }
+.menuItems li a.about span.icon{ background-image:url('aboutinactive.png') }
+.menuItems li a.activeMenu.about  span.icon,.menuItems li a.about:hover  span.icon{ background-image:url('aboutactive.png') }
+.menuItems li a.settings span.icon{ background-image:url('settingsinactive.png') }
+.menuItems li a.activeMenu.settings  span.icon,.menuItems li a.settings:hover  span.icon{ background-image:url('settingsactive.png') }
+.menuItems li a.apps  span.icon{ background-image:url('appsinactive.png') }
+.menuItems li a.activeMenu.apps  span.icon,.menuItems li a.apps:hover  span.icon{ background-image:url('appsactive.png') }
+.menuItems li a.activity  span.icon{ background-image:url('activityinactive.png') }
+.menuItems li a.activeMenu.activity  span.icon,.menuItems li a.activity:hover  span.icon{ background-image:url('activityactive.png') }
+
+/* Large devices (large desktops, 1200px and down) */
+@media (max-width: 1200px) {
+    .menuItems li a span.icon{ margin:0px 10px 0px 10px;  }
+}
+
+/** end of .userinfo-navsections **/
+
+
+
+
+
+/** start of .firstDivBar **/
+
+
+
+.firstDivBar{ background-color: #00add0; width: 154px; overflow:hidden; }
+.leftMainNav{ height: 737px;  }
+
+.leftMainNav li{ width: 154px; background-repeat:no-repeat; background-position:10px center; border-bottom: 1px solid #079fce; border-top: 1px solid #33bdd9; }
+.leftMainNav li.selected{ background-color:#ffffff; }
+.leftMainNav li a{ color:#ffffff; padding:20px 10px 20px 55px; display:block; font-size:13px; text-decoration:none; }
+.leftMainNav li.selected a{ color:#00add0; }
+.dashboard{ background-image:url('dashboardinactive.png') }
+.leftMainNav li.selected.dashboard{ background-image:url('dashboardactive.png') }
+.appsLeft{ background-image:url('sideappsinactive.png') }
+.leftMainNav li.selected.appsLeft{ background-image:url('sideappsactive.png') }
+.devices{ background-image:url('devicesinactive.png') }
+.leftMainNav li.selected.devices{ background-image:url('devicesactive.png') }
+.deviceGroups{ background-image:url('devicegroupsinactive.png') }
+.leftMainNav li.selected.deviceGroups{ background-image:url('devicegroupsactive.png') }
+.user{ background-image:url('userinactive.png') }
+.leftMainNav li.selected.user{ background-image:url('useractive.png') }
+.groups{ background-image:url('groupsinactive.png') }
+.leftMainNav li.selected.groups{ background-image:url('groupsactive.png') }
+.profiles{ background-image:url('profilesinactive.png') }
+.leftMainNav li.selected.profiles{ background-image:url('profilesactive.png') }
+.roles{ background-image:url('rolesinactive.png') }
+.leftMainNav li.selected.roles{ background-image:url('rolesactive.png') }
+.dataManagament{ background-image:url('datamanagementinactive.png') }
+.leftMainNav li.selected.dataManagament{ background-image:url('datamanagementactive.png') }
+.leftMainNav li:hover {}
+.leftMainNav li:hover a{ background-color:rgba(0,0,0,0.1) }
+.leftMainNav li.selected:hover a{ background-color:rgba(0,0,0,0) }
+
+
+.leftMainNav-slider{ list-style-type: none; }
+.leftMainNav-slider li{ width:154px; list-style-type: none; }
+
+.leftIcons{
+    background-color: #2086a1;
+    height: 36px;
+    padding: 5px;
+}
+.leftIcons a{ height: 27px; width: 27px; border-radius: 3px; background-color:#00add0; background-repeat:no-repeat; background-position:center;}
+
+.addIcon{
+    float: left;
+    padding:3px;
+    background-image:url('plus.png');
+}
+.removeIcon{
+    float: left;
+    margin-left: 15px;
+    padding:4px;
+    background-image: url('minus.png');
+}
+.leftArrowIcon{
+    float: right;
+    margin-right: 2px;
+    padding-top:4px;
+    background-image: url('leftarrow.png');
+}
+.rightArrowIcon{
+    float: left;
+    margin-right: 5px;
+    padding-top:4px;
+    background-image: url('rightarrow.png');
+}
+
+/** end of .firstDivBar **/
+
+
+/** start of secondDivBar **/
+.secondDivBar{ background-color: #fff; width: 213px; height: 788px; /** box-shadow: 0 0px 14px -6px #000;**/ }
+.leftSubMenu{ height: 737px; list-style:none; }
+.leftSubMenu li{
+    color: #5b5b5b; font-size: 13px;
+    border-bottom: 1px solid #d7e5f4;
+    background-repeat:no-repeat;
+    background-position:left center;
+}
+.leftSubMenu li a{ padding:20px 10px 20px 40px; display:block; text-decoration:none; }
+
+.icon-samsung{ background-image:url('samsunginactive.png'); }
+.icon-iphone{ background-image:url('iphone5inactive.png'); }
+
+.rightIcons{ background-color: #eeeeee;	height: 36px; padding: 5px 5px 5px 10px; }
+.rightIcons a{ height: 27px; width: 27px; border-radius: 3px; background-color:#afafaf; background-repeat:no-repeat; background-position:center; display:block; float:right; margin-left:15px; }
+
+.icon-minus{ background-image:url('minus.png') }
+.icon-plus{ background-image:url('plus.png') }
+
+.leftSubMenu-bottomMenu{ list-style-type: none; }
+
+.icon-minus{ padding:4px; background-image:url('minus.png') }
+.icon-plus{ padding:3px; background-image:url('plus.png') }
+
+
+
+
+/** end of secondDivBar **/
+
+
+
+/** start of .contentDiv **/
+.contentDiv{
+    background-color: #e8ecef;
+}
+.contentdiv-inner{ padding-left:15px; padding-right:15px; overflow:hidden; }
+/** end of .contentDiv **/
+
+/** start of .collapseButtonsDiv **/
+.collapseButtonsDiv{ clear:both; height:60px;}
+.collapseButtonsDiv{ background-color: #e8ecef; max-height: 45px; min-width: 300px; position: absolute; right:15px; margin-top:20px; }
+.collapseButtonsDiv a{ color:#00add0; background-repeat:no-repeat; background-position:6px center; padding:10px 10px 10px 40px; float:left; border:1px solid #00add0; margin-left:26px; }
+.expandAll{ background-image:url('expandallicon.png') }
+.collapseAll{ background-image:url('collapseallicon.png') }
+
+/** end of .collapseButtonsDiv **/
+
+
+
+/** start of .accordion-tabs-section **/
+.accordion-tabs-section{ margin-top:80px; }
+
+.accordion-tabs-section .panel-heading{ background-repeat:no-repeat; background-position:left center; cursor:pointer; }
+.accordion-tabs-section .panel-heading{ padding-left:40px; }
+
+.aboutGeneral{ background-image:url('generalicon.png'); }
+.accordion-tabs-section .panel-heading.aboutGeneral{ background-position:8px center; }
+.aboutDetails{ background-image:url('details.png'); }
+.aboutSecurity{ background-image:url('security.png'); }
+.aboutRestrictions{ background-image:url('restrictions.png'); }
+.aboutInstalledApps{ background-image:url('installedapps.png'); }
+.aboutInDeviceGroups{ background-image:url('indevicegroups.png'); }
+.aboutCertificates{ background-image:url('certificates.png'); }
+
+.panel-heading .drowDownIcon{ width:26px; height:20px; display:block; float:right; }
+.panel-heading.expand .drowDownIcon{ background-image:url('arrowupgrey.png');  }
+.panel-heading .drowDownIcon,
+.panel-heading.collapsed .drowDownIcon{ background-image:url('arrowdowngrey.png');  }
+
+
+/** end of .accordion-tabs-section **/
+
+
+/** start of bootstrap.min.css modification **/
+.panel{ background-color:transparent; }
+.panel-primary { border-color: #FFFFFF; }
+.panel-primary > .panel-heading{ background-color:#ffffff; color:#768691; }
+.panel-group .panel + .panel{ margin-top:12px; }
+.panel-group .panel-heading + .panel-collapse .panel-body{ border-top-color:#ffffff; }
+/** end of bootstrap.min.css modification **/
+
+/** start of paner added new class **/
+.panel-ul{ list-style:none;  }
+.panel-ul li{ margin-top:12px;padding-bottom:12px; }
+.pannel-data{ display:inline-block; width:130px; color: #707070; }
+.pannel-data-info{ color: #282727;  }
+
+@media (max-width: 900px) {
+    .panel-body .fleft,.panel-body .fright{ float:None; }
+}
+/** start of paner added new class **/
+

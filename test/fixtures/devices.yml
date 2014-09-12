@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  device_type: MyString
+  serial_number: MyString
+  capacity: MyString
+  mobile_user_id: 1
+  version: MyString
+  supervised: MyString
+
+two:
+  device_type: MyString
+  serial_number: MyString
+  capacity: MyString
+  mobile_user_id: 1
+  version: MyString
+  supervised: MyString

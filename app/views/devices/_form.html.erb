@@ -1,0 +1,68 @@
+<script>
+    $('.devices').addClass('selected');
+</script>
+<%= form_for @device, :html => { :class => "form-horizontal device" } do |f| %>
+    <% if @device.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@device.errors.count, "error") %> prohibited this device from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @device.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :device_type, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :device_type, :class => 'form-control' %>
+    </div>
+    <%= error_span(@device[:device_type]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :serial_number, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :serial_number, :class => 'form-control' %>
+    </div>
+    <%= error_span(@device[:serial_number]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :capacity, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :capacity, :class => 'form-control' %>
+    </div>
+    <%= error_span(@device[:capacity]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :mobile_user_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :mobile_user_id, :class => 'form-control' %>
+    </div>
+    <%= error_span(@device[:mobile_user_id]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :version, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :version, :class => 'form-control' %>
+    </div>
+    <%= error_span(@device[:version]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :supervised, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :supervised, :class => 'form-control' %>
+    </div>
+    <%= error_span(@device[:supervised]) %>
+  </div>
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            devices_path, :class => 'btn btn-default' %>
+
+<% end %>

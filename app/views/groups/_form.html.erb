@@ -1,0 +1,23 @@
+<script>
+    $('.groups').addClass('selected');
+</script>
+<%= form_for @group, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :group_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :group_name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :profile_id, :class => 'control-label' %>
+    <div class="controls">
+      <%=select("group","profile_id" ,Profile.all.collect {|p| [ p.profile_name, p.id ] }, {include_blank: 'Select Profile'})  %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                groups_path, :class => 'btn' %>
+  </div>
+<% end %>

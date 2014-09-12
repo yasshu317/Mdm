@@ -1,0 +1,60 @@
+<script>
+    $('.user').addClass('selected');
+</script>
+<%= form_for @mobile_user, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :user_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :user_name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :first_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :first_name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :last_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :last_name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :dob, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :dob, 'data-behaviour' => 'datepicker' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :gender, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.radio_button :gender, "Male"%>&nbsp;&nbsp;<lable>Male</lable> &nbsp;&nbsp;&nbsp;&nbsp;
+      <%= f.radio_button :gender, "Female"%>&nbsp;&nbsp;<lable>Female</lable><br>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :employee_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :employee_id, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :mobile, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :mobile, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :group_id, :class => 'control-label' %>
+    <div class="controls">
+      <%=select("mobile_user",'group_id', Group.all.collect {|p| [ p.group_name, p.id ] }, {include_blank: 'Select Group'})  %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                mobile_users_path, :class => 'btn' %>
+  </div>
+<% end %>

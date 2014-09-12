@@ -1,0 +1,56 @@
+<%- model_class = Profile -%>
+<script>
+    $('.profiles').addClass('selected');
+</script>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:profile_name) %>:</strong></dt>
+  <dd><%= @profile.profile_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:camera) %>:</strong></dt>
+  <dd><%= @profile.camera %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:set_password) %>:</strong></dt>
+  <dd><%= @profile.set_password %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:wallpaper_id) %>:</strong></dt>
+  <dd><%= @profile.wallpaper_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:call_recording) %>:</strong></dt>
+  <dd><%= @profile.call_recording %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:spy_recording) %>:</strong></dt>
+  <dd><%= @profile.spy_recording %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:email_access_id) %>:</strong></dt>
+  <dd><%= get_email_access(@profile) %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:default_call_duration) %>:</strong></dt>
+  <dd><%= @profile.default_call_duration %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:device_mode) %>:</strong></dt>
+  <dd><%= @profile.device_mode %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:ringtone_id) %>:</strong></dt>
+  <dd><%= @profile.ringtone_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:access_to_os) %>:</strong></dt>
+  <dd><%= @profile.access_to_os %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:wifi) %>:</strong></dt>
+  <dd>yaswanth<%= @profile.wifi %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:gprs) %>:</strong></dt>
+  <dd><%= @profile.gprs %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:timezone) %>:</strong></dt>
+  <dd><%= @profile.timezone %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:secure_pictures) %>:</strong></dt>
+  <dd><%= @profile.secure_pictures %></dd>
+  <dt><strong>Internal Settings :</strong></dt>
+  <dd><%= get_internal_settings(@profile) %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:status) %>:</strong></dt>
+  <dd><%= @profile.status %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              profiles_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_profile_path(@profile), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              profile_path(@profile),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

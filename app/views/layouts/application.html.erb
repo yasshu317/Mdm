@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vwatch</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'style', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'external', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'bootstrap.min', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <%= render :partial => 'layouts/header' %>
+</head>
+<body>
+
+<!-- start of .main-wrapper -->
+<div class="main-wrapper table-section">
+
+  <!-- start of .firstDivBar.table-cell -->
+  <div class="firstDivBar table-cell">
+
+    <ul class="leftMainNav">
+      <li class="dashboard">
+        <a href="/">
+          <label>Dashboard</label>
+        </a>
+      </li>
+      <li class="appsLeft"><a href="javascript:void(0)">Apps</a></li>
+      <li class="devices">
+        <a href="/devices">
+          <label>Devices</label>
+        </a>
+      </li>
+      <li class="deviceGroups">
+        <a href="/device_groups">Device Groups</a>
+      </li>
+      <li class="user">
+        <a href="/mobile_users">
+          <label>User</label>
+        </a>
+      </li>
+      <li class="groups">
+        <a href="/groups">
+          <label>Groups</label>
+        </a>
+      </li>
+      <li class="profiles">
+        <a href="/profiles">
+          <label>Profiles</label>
+        </a>
+      </li>
+      <li class="roles"><a href="javascript:void(0)">Roles</a></li>
+      <li class="dataManagament"><a href="javascript:void(0)">Data Managament</a></li>
+    </ul>
+
+    <ul class="leftMainNav-slider">
+      <li>
+        <div class="leftIcons">
+          <a href="javascript:void(0)" class="addIcon"></a>
+          <a href="javascript:void(0)" class="removeIcon"></a>
+          <a href="javascript:void(0)" class="leftArrowIcon"></a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="secondDivBar table-cell">
+      <%= render :partial => 'layouts/sidebar_groups' if controller_name == "groups" %>
+      <%= render :partial => 'layouts/sidebar_profiles' if controller_name == "profiles"%>
+      <%= render :partial => 'layouts/sidebar_users' if controller_name == "mobile_users"%>
+      <%= render :partial => 'layouts/sidebar_devices' if controller_name == "devices"%>
+      <%= render :partial => 'layouts/sidebar_device_groups' if controller_name == "device_groups"%>
+      <!-- end of .firstDivBar.table-cell -->
+
+  </div>
+  <!-- start of .contentDiv.table-cell-->
+  <div class="contentDiv table-cell">
+
+    <%= yield %>
+
+  <!-- end of .secondDivBar.table-cell -->
+
+  </div>
+
+</div>
+<!-- end of .secondDivBar.table-cell -->
+</div>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+<% @mobile_users = MobileUser.all   %>
+<ul class="leftSubMenu">
+<% if !@mobile_users.nil? %>
+    <% @mobile_users.each do |mobile_user| %>
+        <li class="icon-iphone"><b><%= link_to "#{mobile_user.user_name}", mobile_user %></b></li></td></b></li>
+    <% end %>
+<% end %>
+</ul>
+<ul class="leftSubMenu-bottomMenu">
+  <li>
+    <div class="rightIcons">
+      <a href="javascript:void(0)" class="icon-minus"></a>
+      <a href="/mobile_users/new" class="icon-plus"></a>
+    </div>
+  </li>
+</ul>

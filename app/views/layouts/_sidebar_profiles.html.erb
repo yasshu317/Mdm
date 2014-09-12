@@ -1,0 +1,16 @@
+<% @profiles = Profile.all %>
+<ul class="leftSubMenu">
+<% if !@profiles.nil? %>
+    <% @profiles.each do |profile| %>
+        <li class="icon-iphone"><b><%= link_to "#{profile.profile_name}", profile %></li></td></b></li>
+    <% end %>
+<% end %>
+</ul>
+<ul class="leftSubMenu-bottomMenu">
+  <li>
+    <div class="rightIcons">
+      <a href="javascript:void(0)" class="icon-minus"></a>
+      <a href="/profiles/new" class="icon-plus"></a>
+    </div>
+  </li>
+</ul>
