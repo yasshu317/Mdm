@@ -14,7 +14,7 @@ default: &default
   encoding: utf8
   pool: 5
   username: root
-  password: root
+  password: Q4id825B
   socket: /var/run/mysqld/mysqld.sock
 
 development:
@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: Mdm_production
+  database: Mdm_development
   username: Mdm
-  password: <%= ENV['MDM_DATABASE_PASSWORD'] %>
+  password: Q4id825B
