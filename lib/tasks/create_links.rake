@@ -1,5 +1,5 @@
-namespace :myspace do
-  task :pulic => :environment do
+namespace :create_links do
+  task :links => :environment do
     current_dir = %x[pwd]
     current_dir = current_dir.squish
 	#remove all links and create new
