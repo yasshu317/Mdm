@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: Mdm_development
-  username: Mdm
+  username: root
   password: Q4id825B

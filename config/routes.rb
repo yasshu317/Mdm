@@ -40,8 +40,8 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      match 'mdm/checkin' => 'mdm#checkin', via: :get
-      match 'mdm/server' => 'mdm#server', via: :get
+      match 'mdm/checkin' => 'mdm#checkin', via: :put
+      match 'mdm/server' => 'mdm#server', via: :put
       match 'registration' => 'registration#login', via: :post
     end
   end
